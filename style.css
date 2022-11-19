@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: red;
+    overflow: hidden;
+}
+
+.gameContainer {
+    background-image: url(bg.png);
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    width: 100vw;
+    height: 100vh;
+}
+
+.dino {
+    background-image: url(dino.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100px;
+    height: 114px;
+    position: absolute;
+    bottom: 0;
+    left: 52px;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    padding: 0%;
+}
+
+.obstacle {
+    width: 100px;
+    height: 100px;
+    background-image: url(alian1.png);
+    background-size: cover;
+    position: absolute;
+    bottom: 0;
+    left: 44vw;
+}
+
+.animateDino {
+    animation: dino 10s linear;
+    background-image: url(AonRoc.png);
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+
+@keyframes dino {
+    0% {
+        bottom: 150px;
+    }
+    50% {
+        bottom: 500px;
+    }
+    100% {
+        bottom: 0;
+    }
+}
+
+
+/* animation for gun */
+
+.DinoWithGun {
+    /* animation: dinoWithGunAni 10s linear; */
+    background-image: url(dinoWGun.png);
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+
+.obstacleAni {
+    animation: obstacleAni 20s linear infinite;
+}
+
+
+/* dino with teleport power */
+
+.DinoTel {
+    background-image: url("teleport.gif");
+}
+
+.gameOver {
+    position: relative;
+    top: 63px;
+    font-size: 53px;
+    text-align: center;
+    color: rgb(236, 214, 12);
+    font-family: 'Ubuntu', sans-serif;
+}
+
+#scoreCont {
+    font-size: 25px;
+    color: #f0f8f0;
+    font-weight: bold;
+    position: absolute;
+    right: 45px;
+    top: 31px;
+    border: 2px solid black;
+    padding: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    border-radius: 10px;
+}
+
+@keyframes obstacleAni {
+    0% {
+        left: 100vw;
+    }
+    100% {
+        left: -1vw;
+    }
+}
+
+#dice {
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    top: 30vh;
+    left: 45vw;
+    display: flex;
+    justify-self: center;
+    border: 1px solid purple;
+    border-radius: 10px;
+    box-shadow: 5px 5px #54212f;
+}
