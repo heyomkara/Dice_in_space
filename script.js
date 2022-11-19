@@ -2,6 +2,9 @@ score = 0;
 cross = true;
 let p = 0;
 let audio = new Audio('music.mp3');
+let fly = new Audio('fly.mp3');
+let gun = new Audio('gun.mp3');
+let teleport = new Audio('teleport.mp3');
 let audiogo = new Audio('gameover.mp3');
 setTimeout(() => {
     audio.play()
@@ -17,8 +20,10 @@ document.onkeydown = function(e) {
         dino = document.querySelector('.dino');
         dinoX = parseInt(window.getComputedStyle(dino, null).getPropertyValue('left'));
         dino.style.left = dinoX + 200 + "px";
+        fly.play();
         setTimeout(() => {
-            dino.classList.remove('animateDino')
+            dino.classList.remove('animateDino');
+            fly.pause();
         }, 700);
     }
 
@@ -26,10 +31,11 @@ document.onkeydown = function(e) {
         p = 1;
         dino = document.querySelector('.dino');
         dino.classList.add('DinoWithGun');
-
+gun.play()
         setTimeout(() => {
             dino.classList.remove('DinoWithGun')
             power = 0;
+            gun.pause();
         }, 5000);
 
     }
@@ -40,7 +46,9 @@ document.onkeydown = function(e) {
         obs = document.querySelector('.obstacle');
         obsX = parseInt(window.getComputedStyle(obs, null).getPropertyValue('left'));
         dino.style.left = obsX + 50 + "px";
+        teleport.play();
         setTimeout(() => {
+            teleport.pause();
             power = 0;
         }, 5000);
     }
