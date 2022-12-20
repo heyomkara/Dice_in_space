@@ -49,7 +49,7 @@ gun.play()
         teleport.play();
         setTimeout(() => {
             teleport.pause();
-            power = 0;
+            p = 0;
         }, 5000);
     }
 
